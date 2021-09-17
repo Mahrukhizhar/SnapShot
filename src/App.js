@@ -5,6 +5,7 @@ import Header from "./components/Header";
 import Item from "./components/Item";
 import Search from "./components/Search";
 import NotFound from "./components/NotFound";
+import { withUnlaunchProvider } from 'unlaunch-react-client-sdk'
 
 class App extends Component {
   // Prevent page reload, clear input, set URL and push history on submit
@@ -57,4 +58,12 @@ class App extends Component {
   }
 }
 
+App = withUnlaunchProvider({
+  flagKeys: ['react-test-flag'],// Flag key set
+  apiKey: 'public-69a1a320-a8ba-4a9c-9101-ca67d58619ac',
+  identity: '123', // Use special anonymous identity which generates a unique UUID
+  options: {
+    localStorage: false
+  }
+})(App)
 export default App;

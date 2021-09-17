@@ -3,7 +3,7 @@ import { PhotoContext } from "../context/PhotoContext";
 import Gallery from "./Gallery";
 import Loader from "./Loader";
 
-const Container = ({ searchTerm }) => {
+const Container = ({ searchTerm, variation }) => {
   const { images, loading, runSearch } = useContext(PhotoContext);
   useEffect(() => {
     runSearch(searchTerm);
@@ -11,8 +11,9 @@ const Container = ({ searchTerm }) => {
   }, [searchTerm]);
 
   return (
-    <div className="photo-container">
-      {loading ? <Loader /> : <Gallery data={images} />}
+    
+    <div className={`${variation == "on" ? "photo-container photo" :"photo-container"}`} >
+      {loading ? <Loader /> : <Gallery data={images} variation={variation}/>}
     </div>
   );
 };

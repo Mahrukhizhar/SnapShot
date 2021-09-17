@@ -136,13 +136,13 @@ input {
   margin-bottom: 15px;
 }
 
-.photo-container ul img {
+.photo ul img {
   width: 100%;
   transform: scale(1.25);
   transition: transform 1.25s;
 }
 
-.photo-container li:hover img {
+.photo li:hover img {
   transform: scale(1.65);
 }
 
